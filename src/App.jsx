@@ -2,17 +2,17 @@ import Tela from './components/Tela';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useEffect, useRef, useState } from 'react';
-import frutto1 from './assets/img/frutta/frutto1.svg';
-import frutto2 from './assets/img/frutta/frutto2.svg';
-import frutto3 from './assets/img/frutta/frutto3.svg';
-import frutto4 from './assets/img/frutta/frutto4.svg';
-import frutto5 from './assets/img/frutta/frutto5.svg';
-import frutto6 from './assets/img/frutta/frutto6.svg';
-import frutto7 from './assets/img/frutta/frutto7.svg';
-import frutto8 from './assets/img/frutta/frutto8.svg';
-import frutto9 from './assets/img/frutta/frutto9.svg';
-import frutto10 from './assets/img/frutta/frutto10.svg';
-import frutto11 from './assets/img/frutta/frutto11.svg';
+import frutto1 from './assets/img/frutta/frutto1.png';
+import frutto2 from './assets/img/frutta/frutto2.png';
+import frutto3 from './assets/img/frutta/frutto3.png';
+import frutto4 from './assets/img/frutta/frutto4.png';
+import frutto5 from './assets/img/frutta/frutto5.png';
+import frutto6 from './assets/img/frutta/frutto6.png';
+import frutto7 from './assets/img/frutta/frutto7.png';
+import frutto8 from './assets/img/frutta/frutto8.png';
+import frutto9 from './assets/img/frutta/frutto9.png';
+import frutto10 from './assets/img/frutta/frutto10.png';
+import frutto11 from './assets/img/frutta/frutto11.png';
 
 const fruttaImg = [
   frutto1,
@@ -47,7 +47,7 @@ function App() {
   const avviaGame = () => {
     setInCorso(true);
     timerRef.current = setInterval(() => {
-      console.log(fruttaImg[+(Math.random() * 10).toFixed(0)]);
+      console.log(fruttaImg[+(Math.random() * 9).toFixed(0)]);
       setOggetti((prec) => [
         ...prec,
         {
@@ -56,7 +56,7 @@ function App() {
             x: +(Math.random() * 300).toFixed(0),
             y: 500,
           },
-          img: `url(${fruttaImg[+(Math.random() * 10).toFixed(0)]})`,
+          img: `url(${fruttaImg[+(Math.random() * 9).toFixed(0)]})`,
         },
       ]);
       setOggetti((precObj) =>
@@ -99,7 +99,6 @@ function App() {
         score={score}
         abbandona={abbandona}
       />
-      <img src={fruttaImg[7]} alt="" />
       <Tela oggetti={oggetti} eliminaOggetto={eliminaOggetto} loose={loose} />
       <Footer />
     </main>
