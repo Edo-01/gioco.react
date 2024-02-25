@@ -35,6 +35,7 @@ function App() {
   const [loose, setLoose] = useState(false);
 
   let timerRef = useRef(null);
+  let timerRef2 = useRef(null);
 
   const eliminaOggetto = (parID) => {
     setOggetti((prec) => {
@@ -46,8 +47,8 @@ function App() {
   };
   const avviaGame = () => {
     setInCorso(true);
+
     timerRef.current = setInterval(() => {
-      console.log(fruttaImg[+(Math.random() * 9).toFixed(0)]);
       setOggetti((prec) => [
         ...prec,
         {
@@ -59,6 +60,9 @@ function App() {
           img: `url(${fruttaImg[+(Math.random() * 9).toFixed(0)]})`,
         },
       ]);
+    }, 1200);
+
+    timerRef2.current = setInterval(() => {
       setOggetti((precObj) =>
         precObj.map((obj) => {
           if (obj.posizione.y < 1) {
@@ -69,13 +73,13 @@ function App() {
               ...obj,
               posizione: {
                 ...obj.posizione,
-                y: obj.posizione.y - 40,
+                y: obj.posizione.y - 1,
               },
             };
           }
         })
       );
-    }, 450);
+    }, 15);
   };
   const restart = () => {
     setOggetti([]);
@@ -84,6 +88,7 @@ function App() {
   };
   const abbandona = () => {
     clearInterval(timerRef.current);
+    clearInterval(timerRef2.current);
     setOggetti([]);
     setScore(0);
     setInCorso(false);
