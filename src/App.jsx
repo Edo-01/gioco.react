@@ -99,6 +99,7 @@ function App() {
         score={score}
         abbandona={abbandona}
       />
+      <img src={fruttaImg[7]} alt="" />
       <Tela oggetti={oggetti} eliminaOggetto={eliminaOggetto} loose={loose} />
       <Footer />
     </main>
