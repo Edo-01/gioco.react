@@ -47,7 +47,7 @@ function App() {
   const avviaGame = () => {
     setInCorso(true);
     timerRef.current = setInterval(() => {
-      console.log(+(Math.random() * 3).toFixed(0));
+      console.log(fruttaImg[+(Math.random() * 10).toFixed(0)]);
       setOggetti((prec) => [
         ...prec,
         {

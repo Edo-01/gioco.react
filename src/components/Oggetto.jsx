@@ -1,4 +1,3 @@
-import muro from '../assets/img/muro.svg';
 import { useRef, useState } from 'react';
 const Oggetto = ({ posizione, eliminaOggetto, img }) => {
   const [showPoint, setShowPoint] = useState(false);
